@@ -30,7 +30,7 @@ test: .coverage
 .PHONY: lint
 lint: pip-install
 	mypy *.py
-	prospector *.py
+	prospector -M *.py
 
 coverage-reports/unit-test.coverage: pip-install
 	COVERAGE_FILE=$@ coverage run --omit "venv/*" -m unittest discover
